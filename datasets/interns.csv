@@ -1,0 +1,36 @@
+intern_id,name,email,domain,mentor_name,batch,start_date,end_date,status
+INT-0001,Kabir Verma,kabir.verma1@example.com,Backend Development,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0002,Om Verma,om.verma2@example.com,DevOps,Ananya Rao,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0003,Aditya Iyer,aditya.iyer3@example.com,Frontend Development,Ananya Rao,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0004,Yash Mehta,yash.mehta4@example.com,Data Science,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0005,Neha Kapoor,neha.kapoor5@example.com,Backend Development,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0006,Arjun Iyer,arjun.iyer6@example.com,AI/ML,Ananya Rao,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0007,Diya Kapoor,diya.kapoor7@example.com,AI/ML,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0008,Pari Verma,pari.verma8@example.com,Data Science,Ananya Rao,2026-Batch-B,2026-01-05,2026-03-30,inactive
+INT-0009,Navya Chatterjee,navya.chatterjee9@example.com,AI/ML,Rohit Sharma,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0010,Krishna Das,krishna.das10@example.com,AI/ML,Ananya Rao,2026-Batch-A,2026-01-05,2026-03-30,inactive
+INT-0011,Saanvi Patel,saanvi.patel11@example.com,Data Science,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0012,Reyansh Kulkarni,reyansh.kulkarni12@example.com,AI/ML,Ananya Rao,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0013,Krishna Gupta,krishna.gupta13@example.com,Data Science,Karan Mehta,2026-Batch-B,2026-01-05,2026-03-30,completed
+INT-0014,Kabir Rao,kabir.rao14@example.com,DevOps,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,inactive
+INT-0015,Aryan Sharma,aryan.sharma15@example.com,Frontend Development,Ananya Rao,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0016,Aditya Iyer,aditya.iyer16@example.com,DevOps,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0017,Saanvi Chatterjee,saanvi.chatterjee17@example.com,Data Science,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0018,Om Mehta,om.mehta18@example.com,DevOps,Priya Nair,2026-Batch-B,2026-01-05,2026-03-30,inactive
+INT-0019,Saanvi Reddy,saanvi.reddy19@example.com,Frontend Development,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0020,Vivaan Kapoor,vivaan.kapoor20@example.com,Backend Development,Rohit Sharma,2026-Batch-A,2026-01-05,2026-03-30,inactive
+INT-0021,Myra Joshi,myra.joshi21@example.com,Backend Development,Karan Mehta,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0022,Aadhya Mehta,aadhya.mehta22@example.com,AI/ML,Ananya Rao,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0023,Pari Das,pari.das23@example.com,AI/ML,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0024,Sai Singh,sai.singh24@example.com,Backend Development,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0025,Vihaan Kapoor,vihaan.kapoor25@example.com,AI/ML,Rohit Sharma,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0026,Sai Mehta,sai.mehta26@example.com,DevOps,Ananya Rao,2026-Batch-B,2026-01-05,2026-03-30,active
+INT-0027,Vihaan Chatterjee,vihaan.chatterjee27@example.com,AI/ML,Priya Nair,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0028,Isha Joshi,isha.joshi28@example.com,Backend Development,Ananya Rao,2026-Batch-B,2026-01-05,2026-03-30,inactive
+INT-0029,Aryan Mehta,aryan.mehta29@example.com,Frontend Development,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,completed
+INT-0030,Sai Patel,sai.patel30@example.com,DevOps,Karan Mehta,2026-Batch-A,2026-01-05,2026-03-30,completed
+INT-0031,Aryan Rao,aryan.rao31@example.com,Frontend Development,Priya Nair,2026-Batch-B,2026-01-05,2026-03-30,completed
+INT-0032,Kabir Reddy,kabir.reddy32@example.com,Data Science,Karan Mehta,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0033,Aditya Reddy,aditya.reddy33@example.com,Backend Development,Rohit Sharma,2026-Batch-A,2026-01-05,2026-03-30,active
+INT-0034,Yash Kulkarni,yash.kulkarni34@example.com,Backend Development,Rohit Sharma,2026-Batch-A,2026-01-05,2026-03-30,completed
+INT-0035,Sneha Reddy,sneha.reddy35@example.com,Backend Development,Rohit Sharma,2026-Batch-B,2026-01-05,2026-03-30,active

@@ -1,0 +1,72 @@
+feedback_id,intern_id,mentor_name,week_number,feedback_text,rating
+1,INT-0001,Priya Nair,4,"Struggling with backend fundamentals, needs support.",3
+2,INT-0001,Priya Nair,6,"Consistently meeting deadlines, well done.",3
+3,INT-0001,Priya Nair,3,"Consistently meeting deadlines, well done.",2
+4,INT-0002,Ananya Rao,6,"Consistently meeting deadlines, well done.",5
+5,INT-0002,Ananya Rao,4,Excellent understanding of core concepts.,5
+6,INT-0003,Ananya Rao,2,Should focus more on code documentation.,2
+7,INT-0004,Rohit Sharma,1,Needs to be more proactive in asking questions.,2
+8,INT-0004,Rohit Sharma,5,Excellent understanding of core concepts.,5
+9,INT-0005,Rohit Sharma,2,Great communication during stand-ups.,4
+10,INT-0005,Rohit Sharma,1,"Consistently meeting deadlines, well done.",2
+11,INT-0005,Rohit Sharma,4,Should focus more on code documentation.,5
+12,INT-0006,Ananya Rao,6,"Good progress this week, keep it up.",2
+13,INT-0006,Ananya Rao,4,"Struggling with backend fundamentals, needs support.",4
+14,INT-0007,Priya Nair,6,Needs to improve consistency in submissions.,5
+15,INT-0008,Ananya Rao,6,Needs to improve consistency in submissions.,5
+16,INT-0009,Rohit Sharma,6,Great communication during stand-ups.,2
+17,INT-0010,Ananya Rao,3,"Good progress this week, keep it up.",4
+18,INT-0011,Priya Nair,3,Excellent understanding of core concepts.,3
+19,INT-0011,Priya Nair,4,"Consistently meeting deadlines, well done.",3
+20,INT-0012,Ananya Rao,2,Needs to improve consistency in submissions.,5
+21,INT-0013,Karan Mehta,6,Excellent understanding of core concepts.,3
+22,INT-0013,Karan Mehta,2,Needs to be more proactive in asking questions.,4
+23,INT-0013,Karan Mehta,4,Needs to be more proactive in asking questions.,4
+24,INT-0014,Rohit Sharma,1,Excellent understanding of core concepts.,2
+25,INT-0014,Rohit Sharma,4,Needs to be more proactive in asking questions.,4
+26,INT-0014,Rohit Sharma,3,Great communication during stand-ups.,5
+27,INT-0015,Ananya Rao,3,"Struggling with backend fundamentals, needs support.",5
+28,INT-0015,Ananya Rao,4,Needs to be more proactive in asking questions.,2
+29,INT-0015,Ananya Rao,6,"Struggling with backend fundamentals, needs support.",5
+30,INT-0016,Priya Nair,3,Great communication during stand-ups.,2
+31,INT-0016,Priya Nair,5,"Consistently meeting deadlines, well done.",4
+32,INT-0016,Priya Nair,6,"Good progress this week, keep it up.",2
+33,INT-0017,Rohit Sharma,6,"Struggling with backend fundamentals, needs support.",4
+34,INT-0017,Rohit Sharma,4,"Struggling with backend fundamentals, needs support.",3
+35,INT-0017,Rohit Sharma,3,Great communication during stand-ups.,3
+36,INT-0018,Priya Nair,1,Needs to be more proactive in asking questions.,2
+37,INT-0018,Priya Nair,6,Should focus more on code documentation.,3
+38,INT-0018,Priya Nair,3,Needs to improve consistency in submissions.,4
+39,INT-0019,Rohit Sharma,6,Excellent understanding of core concepts.,3
+40,INT-0019,Rohit Sharma,4,Excellent understanding of core concepts.,4
+41,INT-0020,Rohit Sharma,5,Great communication during stand-ups.,5
+42,INT-0020,Rohit Sharma,3,Great communication during stand-ups.,4
+43,INT-0020,Rohit Sharma,2,Needs to improve consistency in submissions.,5
+44,INT-0021,Karan Mehta,2,"Struggling with backend fundamentals, needs support.",5
+45,INT-0022,Ananya Rao,3,"Good progress this week, keep it up.",4
+46,INT-0022,Ananya Rao,1,Needs to improve consistency in submissions.,5
+47,INT-0022,Ananya Rao,4,Should focus more on code documentation.,4
+48,INT-0023,Priya Nair,4,"Struggling with backend fundamentals, needs support.",5
+49,INT-0023,Priya Nair,3,"Good progress this week, keep it up.",4
+50,INT-0023,Priya Nair,1,"Struggling with backend fundamentals, needs support.",2
+51,INT-0024,Priya Nair,4,Needs to improve consistency in submissions.,3
+52,INT-0024,Priya Nair,3,"Good progress this week, keep it up.",2
+53,INT-0024,Priya Nair,6,Great communication during stand-ups.,5
+54,INT-0025,Rohit Sharma,1,"Struggling with backend fundamentals, needs support.",3
+55,INT-0026,Ananya Rao,4,"Consistently meeting deadlines, well done.",3
+56,INT-0026,Ananya Rao,3,"Consistently meeting deadlines, well done.",2
+57,INT-0027,Priya Nair,5,Great communication during stand-ups.,2
+58,INT-0027,Priya Nair,4,Should focus more on code documentation.,3
+59,INT-0028,Ananya Rao,4,Should focus more on code documentation.,2
+60,INT-0028,Ananya Rao,2,Should focus more on code documentation.,4
+61,INT-0029,Rohit Sharma,4,Great communication during stand-ups.,3
+62,INT-0030,Karan Mehta,4,Needs to improve consistency in submissions.,3
+63,INT-0031,Priya Nair,6,"Good progress this week, keep it up.",4
+64,INT-0031,Priya Nair,5,"Struggling with backend fundamentals, needs support.",3
+65,INT-0031,Priya Nair,1,"Struggling with backend fundamentals, needs support.",2
+66,INT-0032,Karan Mehta,2,"Struggling with backend fundamentals, needs support.",4
+67,INT-0032,Karan Mehta,5,Excellent understanding of core concepts.,2
+68,INT-0032,Karan Mehta,6,Great communication during stand-ups.,3
+69,INT-0033,Rohit Sharma,5,Great communication during stand-ups.,3
+70,INT-0034,Rohit Sharma,6,"Good progress this week, keep it up.",3
+71,INT-0035,Rohit Sharma,3,"Struggling with backend fundamentals, needs support.",4

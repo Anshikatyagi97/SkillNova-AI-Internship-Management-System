@@ -1,0 +1,31 @@
+task_id,title,domain,week_number,difficulty
+TASK-001,Build a REST API with FastAPI,Backend Development,1,Beginner
+TASK-002,Implement JWT Authentication,Backend Development,2,Advanced
+TASK-003,Design a Database Schema,Backend Development,3,Beginner
+TASK-004,Write Unit Tests for API Endpoints,Backend Development,4,Advanced
+TASK-005,Implement Rate Limiting Middleware,Backend Development,5,Advanced
+TASK-006,Build a CRUD Service Layer,Backend Development,6,Advanced
+TASK-007,Build a Responsive Dashboard UI,Frontend Development,1,Intermediate
+TASK-008,Implement Form Validation,Frontend Development,2,Beginner
+TASK-009,Create a Reusable Component Library,Frontend Development,3,Intermediate
+TASK-010,Integrate REST APIs,Frontend Development,4,Intermediate
+TASK-011,Build a Data Table with Pagination,Frontend Development,5,Beginner
+TASK-012,Add Dark Mode Support,Frontend Development,6,Beginner
+TASK-013,Train a Text Classification Model,AI/ML,1,Beginner
+TASK-014,Build a Recommendation Engine Prototype,AI/ML,2,Advanced
+TASK-015,Fine-tune a Sentiment Analysis Model,AI/ML,3,Intermediate
+TASK-016,Build a RAG Pipeline with ChromaDB,AI/ML,4,Intermediate
+TASK-017,Evaluate Model Performance Metrics,AI/ML,5,Intermediate
+TASK-018,Build a Prompt Engineering Notebook,AI/ML,6,Intermediate
+TASK-019,Perform Exploratory Data Analysis,Data Science,1,Intermediate
+TASK-020,Build a Data Cleaning Pipeline,Data Science,2,Advanced
+TASK-021,Create Visualizations with Matplotlib,Data Science,3,Beginner
+TASK-022,Build a Time-Series Forecast,Data Science,4,Advanced
+TASK-023,Feature Engineering on Sample Dataset,Data Science,5,Advanced
+TASK-024,Write a Statistical Analysis Report,Data Science,6,Advanced
+TASK-025,Write a Dockerfile for the Backend,DevOps,1,Beginner
+TASK-026,Set Up CI with GitHub Actions,DevOps,2,Beginner
+TASK-027,Configure Environment Variables,DevOps,3,Intermediate
+TASK-028,Write Deployment Documentation,DevOps,4,Advanced
+TASK-029,Set Up Logging and Monitoring,DevOps,5,Intermediate
+TASK-030,Automate Testing in a Pipeline,DevOps,6,Beginner

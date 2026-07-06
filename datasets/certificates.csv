@@ -1,0 +1,36 @@
+certificate_id,intern_id,status,issue_date,remarks
+1,INT-0001,Eligible,2026-07-01,All criteria met.
+2,INT-0002,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+3,INT-0003,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+4,INT-0004,Not Eligible,,Attendance and task completion below threshold.
+5,INT-0005,Not Eligible,,Attendance and task completion below threshold.
+6,INT-0006,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+7,INT-0007,Not Eligible,,Attendance and task completion below threshold.
+8,INT-0008,Eligible,2026-07-01,All criteria met.
+9,INT-0009,Eligible,2026-07-01,All criteria met.
+10,INT-0010,Eligible,2026-07-01,All criteria met.
+11,INT-0011,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+12,INT-0012,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+13,INT-0013,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+14,INT-0014,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+15,INT-0015,Eligible,2026-07-01,All criteria met.
+16,INT-0016,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+17,INT-0017,Eligible,2026-07-01,All criteria met.
+18,INT-0018,Not Eligible,,Attendance and task completion below threshold.
+19,INT-0019,Not Eligible,,Attendance and task completion below threshold.
+20,INT-0020,Eligible,2026-07-01,All criteria met.
+21,INT-0021,Eligible,2026-07-01,All criteria met.
+22,INT-0022,Eligible,2026-07-01,All criteria met.
+23,INT-0023,Eligible,2026-07-01,All criteria met.
+24,INT-0024,Eligible,2026-07-01,All criteria met.
+25,INT-0025,Not Eligible,,Attendance and task completion below threshold.
+26,INT-0026,Eligible,2026-07-01,All criteria met.
+27,INT-0027,Not Eligible,,Attendance and task completion below threshold.
+28,INT-0028,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+29,INT-0029,Eligible,2026-07-01,All criteria met.
+30,INT-0030,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+31,INT-0031,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+32,INT-0032,Needs Improvement,,Close to meeting criteria; needs improvement in one or more areas.
+33,INT-0033,Eligible,2026-07-01,All criteria met.
+34,INT-0034,Eligible,2026-07-01,All criteria met.
+35,INT-0035,Eligible,2026-07-01,All criteria met.
