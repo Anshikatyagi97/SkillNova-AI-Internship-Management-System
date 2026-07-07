@@ -11,6 +11,7 @@ TODO (Interns):
 """
 
 from typing import Dict, List
+from backend.ai.llm_service import llm
 
 
 def identify_weak_skills(intern_id: str) -> List[str]:
@@ -49,3 +50,84 @@ def recommend_learning_resources(intern_id: str) -> Dict:
         "reading_material": [],
         "revision_topics": [],
     }
+
+def generate_ai_task_recommendations(
+    intern_id: str,
+    weak_skills: List[str],
+) -> str:
+    """
+    Generate AI-powered learning recommendations.
+    """
+
+    prompt = f"""
+You are an AI Internship Mentor.
+
+Intern ID: {intern_id}
+
+Weak Skills:
+{', '.join(weak_skills) if weak_skills else 'None'}
+
+Generate personalized recommendations.
+
+Include:
+1. Skills to improve
+2. Practice strategy
+3. Project suggestion
+4. Motivation
+
+Keep it concise (3-5 sentences).
+"""
+
+    return llm.generate_response(prompt)
+
+
+def recommend_courses(
+    weak_skills: List[str],
+) -> List[str]:
+    """
+    Recommend courses based on weak skills.
+    """
+
+    mapping = {
+        "Python": "Python for Everybody",
+        "FastAPI": "FastAPI Complete Guide",
+        "SQL": "SQL for Data Analysis",
+        "Machine Learning": "Machine Learning Specialization",
+        "Git": "Git & GitHub Bootcamp",
+    }
+
+    recommendations = []
+
+    for skill in weak_skills:
+        if skill in mapping:
+            recommendations.append(mapping[skill])
+
+    if not recommendations:
+        recommendations.append("Complete Internship Foundation Course")
+
+    return recommendations
+
+
+def recommend_projects(
+    weak_skills: List[str],
+) -> List[str]:
+    """
+    Recommend projects based on weak skills.
+    """
+
+    if "FastAPI" in weak_skills:
+        return [
+            "Build a REST API",
+            "Student Management System",
+        ]
+
+    if "Machine Learning" in weak_skills:
+        return [
+            "House Price Prediction",
+            "Spam Detection",
+        ]
+
+    return [
+        "Personal Portfolio",
+        "Task Management App",
+    ]

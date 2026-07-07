@@ -13,6 +13,7 @@ TODO (Interns):
 """
 
 from typing import Dict, List
+from backend.ai.llm_service import llm
 
 
 def get_dashboard_stats(mentor_name: str = None) -> Dict:
@@ -71,3 +72,82 @@ def generate_mentor_recommendations() -> List[str]:
     TODO: e.g. "Schedule a 1:1 with 3 inactive interns in Batch A."
     """
     return ["TODO: AI-generated mentor recommendation goes here."]
+
+def generate_ai_dashboard_summary(
+    total_interns: int,
+    active_interns: int,
+    inactive_interns: int,
+    completion_rate: float,
+) -> str:
+    """
+    Generate AI summary for mentor dashboard.
+    """
+
+    prompt = f"""
+You are an AI Mentor Assistant.
+
+Dashboard Statistics:
+
+Total Interns: {total_interns}
+Active Interns: {active_interns}
+Inactive Interns: {inactive_interns}
+Overall Completion Rate: {completion_rate}%
+
+Generate a professional dashboard summary in 3-4 sentences.
+
+Include:
+- Overall batch performance
+- Positive observations
+- Areas needing attention
+- Mentor guidance
+"""
+
+    return llm.generate_response(prompt)
+
+
+def generate_ai_alerts(
+    inactive_interns: int,
+    pending_submissions: int,
+) -> List[str]:
+    """
+    Generate AI alerts for mentors.
+    """
+
+    alerts = []
+
+    if inactive_interns > 0:
+        alerts.append(
+            f"{inactive_interns} interns are currently inactive."
+        )
+
+    if pending_submissions > 0:
+        alerts.append(
+            f"{pending_submissions} submissions are still pending review."
+        )
+
+    return alerts
+
+
+def generate_mentor_recommendations(
+    completion_rate: float,
+) -> List[str]:
+    """
+    Generate mentor recommendations.
+    """
+
+    if completion_rate >= 80:
+        return [
+            "Recognize top performers.",
+            "Assign advanced project work.",
+        ]
+
+    elif completion_rate >= 60:
+        return [
+            "Conduct weekly progress reviews.",
+            "Support interns facing challenges.",
+        ]
+
+    return [
+        "Schedule one-to-one mentoring sessions.",
+        "Focus on inactive interns first.",
+    ]

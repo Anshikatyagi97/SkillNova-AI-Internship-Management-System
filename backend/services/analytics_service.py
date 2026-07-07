@@ -81,25 +81,14 @@ def get_platform_analytics() -> dict:
             else 0
         )
 
-        overall_health = round(
-            (
-                average_attendance +
-                github_health
-            ) / 2,
-            2,
-        )
+        overall_health = analytics_ai.calculate_health_score(
+        average_attendance,
+        github_health,
+)
 
-        if overall_health >= 85:
-            health_status = "Excellent"
-
-        elif overall_health >= 70:
-            health_status = "Good"
-
-        elif overall_health >= 50:
-            health_status = "Average"
-
-        else:
-            health_status = "Needs Improvement"
+        health_status = analytics_ai.get_health_status(
+        overall_health
+)
 
         return {
 
@@ -123,11 +112,10 @@ def get_platform_analytics() -> dict:
 
             "system_status": health_status,
 
-            "ai_summary": (
-                f"The internship platform currently has "
-                f"{total_interns} interns with an overall "
-                f"health score of {overall_health}%."
-            ),
+            "ai_summary": analytics_ai.generate_weekly_summary(  
+             total_interns,
+             overall_health,
+),
         }
 
     finally:

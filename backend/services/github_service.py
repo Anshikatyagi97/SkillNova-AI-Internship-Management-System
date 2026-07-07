@@ -2,12 +2,12 @@
 Backend service layer for the GitHub & Code Review Assistant feature.
 """
 
-from ai_modules.github_analyzer import service as github_ai
-
 from sqlalchemy.orm import Session
 
+from ai_modules.github_analyzer import service as github_ai
 from backend.database.database import SessionLocal
 from backend.models.github_activity import GitHubActivity
+
 
 def get_github_analysis(repo_url: str) -> dict:
     """
@@ -30,7 +30,7 @@ def get_github_analysis(repo_url: str) -> dict:
                 "message": "Repository not found."
             }
 
-        average_score = round(
+        overall_score = round(
             (
                 activity.readme_score +
                 activity.doc_score +
@@ -39,40 +39,31 @@ def get_github_analysis(repo_url: str) -> dict:
             2,
         )
 
-        if average_score >= 8:
-            health = "Excellent"
+        repository_health = github_ai.calculate_repository_health(
+            activity.readme_score,
+            activity.code_quality_score,
+        )
 
-        elif average_score >= 6:
-            health = "Good"
+        ai_summary = github_ai.generate_ai_repository_summary(
+           repo_url=activity.repo_name,
+           commits=activity.commits,
+           branches=1,
+           readme_score=activity.readme_score,
+           code_quality_score=activity.code_quality_score,
+)
 
-        elif average_score >= 4:
-            health = "Needs Improvement"
-
-        else:
-            health = "Poor"
-
-        suggestions = []
-
-        if activity.readme_score < 7:
-            suggestions.append("Improve README documentation.")
-
-        if activity.doc_score < 7:
-            suggestions.append("Add more project documentation.")
-
-        if activity.code_quality_score < 7:
-            suggestions.append("Refactor code and improve quality.")
-
-        if activity.commits < 10:
-            suggestions.append("Increase commit frequency.")
-
-        if not suggestions:
-            suggestions.append("Excellent repository. Keep it up!")
+        recommendations = github_ai.generate_repository_recommendations(
+            activity.readme_score,
+            activity.code_quality_score,
+        )
 
         return {
 
             "repo_name": activity.repo_name,
 
             "commits": activity.commits,
+
+            "branches": 1,
 
             "last_commit_date": activity.last_commit_date,
 
@@ -82,11 +73,13 @@ def get_github_analysis(repo_url: str) -> dict:
 
             "code_quality_score": activity.code_quality_score,
 
-            "repository_health": health,
+            "repository_health": repository_health,
 
-            "overall_score": average_score,
+            "overall_score": overall_score,
 
-            "ai_feedback": suggestions,
+            "ai_summary": ai_summary,
+
+            "recommendations": recommendations,
         }
 
     finally:

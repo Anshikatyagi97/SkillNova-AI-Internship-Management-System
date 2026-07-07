@@ -2,14 +2,14 @@
 Backend service layer for the Task Recommendation feature.
 """
 
-from ai_modules.task_recommender import service as task_ai
-
 from sqlalchemy.orm import Session
 
+from ai_modules.task_recommender import service as task_ai
 from backend.database.database import SessionLocal
-from backend.models.task import Task
-from backend.models.submission import Submission
 from backend.models.intern import Intern
+from backend.models.submission import Submission
+from backend.models.task import Task
+
 
 def get_task_recommendations(intern_id: str) -> dict:
     """
@@ -20,7 +20,6 @@ def get_task_recommendations(intern_id: str) -> dict:
 
     try:
 
-        # Check if intern exists
         intern = (
             db.query(Intern)
             .filter(Intern.intern_id == intern_id)
@@ -33,7 +32,6 @@ def get_task_recommendations(intern_id: str) -> dict:
                 "message": "Intern not found."
             }
 
-        # Fetch completed tasks
         completed_submissions = (
             db.query(Submission)
             .filter(Submission.intern_id == intern_id)
@@ -41,10 +39,10 @@ def get_task_recommendations(intern_id: str) -> dict:
         )
 
         completed_task_ids = {
-            submission.task_id for submission in completed_submissions
+            submission.task_id
+            for submission in completed_submissions
         }
 
-        # Fetch all tasks for intern's domain
         all_tasks = (
             db.query(Task)
             .filter(Task.domain == intern.domain)
@@ -52,7 +50,6 @@ def get_task_recommendations(intern_id: str) -> dict:
             .all()
         )
 
-        # Find the first incomplete task
         recommended_task = None
 
         for task in all_tasks:
@@ -60,16 +57,14 @@ def get_task_recommendations(intern_id: str) -> dict:
                 recommended_task = task
                 break
 
-        # If all tasks are completed
         if recommended_task is None:
             return {
                 "intern_id": intern_id,
                 "message": "🎉 Congratulations! All assigned tasks are completed.",
                 "completed_tasks": len(completed_task_ids),
-                "recommended_task": None
+                "recommended_task": None,
             }
 
-        # Difficulty based priority
         if recommended_task.difficulty.lower() == "beginner":
             priority = "Medium"
             estimated_hours = 3
@@ -82,15 +77,23 @@ def get_task_recommendations(intern_id: str) -> dict:
             priority = "Very High"
             estimated_hours = 8
 
-        # AI-style Recommendation
-        recommendation_reason = (
-            f"The next recommended task is '{recommended_task.title}' "
-            f"because it follows your current learning path in "
-            f"{intern.domain}."
+        # Demo weak skills (later these can come from identify_weak_skills())
+        weak_skills = [
+            "Python",
+            "FastAPI",
+        ]
+
+        ai_summary = task_ai.generate_ai_task_recommendations(
+            intern_id=intern_id,
+            weak_skills=weak_skills,
         )
 
-        learning_tip = (
-            "Complete this task before moving to higher difficulty topics."
+        recommended_courses = task_ai.recommend_courses(
+            weak_skills
+        )
+
+        recommended_projects = task_ai.recommend_projects(
+            weak_skills
         )
 
         return {
@@ -113,9 +116,17 @@ def get_task_recommendations(intern_id: str) -> dict:
 
             "estimated_hours": estimated_hours,
 
-            "learning_tip": learning_tip,
+            "weak_skills": weak_skills,
 
-            "ai_recommendation": recommendation_reason,
+            "recommended_courses": recommended_courses,
+
+            "recommended_projects": recommended_projects,
+
+            "learning_tip": (
+                "Complete this task before moving to higher difficulty topics."
+            ),
+
+            "ai_summary": ai_summary,
         }
 
     finally:

@@ -59,9 +59,11 @@ def get_certificate_eligibility(intern_id: str) -> dict:
 
             "remarks": certificate.remarks,
 
-            "ai_recommendation": recommendation,
+            "ai_recommendation": certificate_ai.generate_eligibility_explanation(
+              {"status": status}
+),
 
-            "next_step": next_step,
+            "next_step": certificate_ai.get_next_step(status),
         }
 
     finally:

@@ -1,12 +1,5 @@
 """
 AI Certificate Eligibility Analyzer - Service Layer
-
-TODO (Interns):
-1. Implement `evaluate_certificate_eligibility()` combining:
-   attendance %, task completion %, project submissions,
-   mentor feedback rating, and GitHub activity into one decision.
-2. Implement `generate_eligibility_explanation()` - natural-language
-   justification for the decision.
 """
 
 from typing import Dict
@@ -14,29 +7,70 @@ from typing import Dict
 
 def evaluate_certificate_eligibility(intern_id: str) -> Dict:
     """
-    Determine certificate status for an intern: "Eligible",
-    "Not Eligible", or "Needs Improvement".
-
-    TODO: Define clear weighted thresholds, e.g.:
-          - attendance >= 75% AND completion >= 80% -> Eligible
-          - attendance < 50% OR completion < 40% -> Not Eligible
-          - everything else -> Needs Improvement
-          Pull the real attendance/completion/feedback/github numbers
-          from the other AI modules / database instead of hardcoding.
+    Placeholder function.
     """
     return {
         "intern_id": intern_id,
         "status": "Needs Improvement",
-        "explanation": "TODO: replace with a real AI-generated explanation.",
+        "explanation": "Certificate eligibility will be calculated from real data."
     }
 
 
 def generate_eligibility_explanation(metrics: Dict) -> str:
     """
-    Given a metrics dict (attendance, completion, feedback, github),
-    produce a natural-language explanation for the eligibility decision.
-
-    TODO: Feed `metrics` into an LLM prompt to produce a clear,
-          personalized explanation paragraph.
+    Generate explanation from metrics.
     """
-    return "TODO: AI-generated explanation goes here."
+
+    status = metrics.get("status", "Needs Improvement")
+
+    if status == "Eligible":
+        return (
+            "The intern has successfully completed all internship "
+            "requirements and is eligible for certificate generation."
+        )
+
+    if status == "Needs Improvement":
+        return (
+            "The intern has made good progress but still needs to improve "
+            "attendance, task completion or overall performance before "
+            "certificate issuance."
+        )
+
+    return (
+        "The intern is currently not eligible for certification due to "
+        "insufficient internship performance."
+    )
+
+
+def get_eligibility_score(status: str) -> int:
+    """
+    Convert certificate status into a score.
+    """
+
+    if status == "Eligible":
+        return 100
+
+    if status == "Needs Improvement":
+        return 70
+
+    return 40
+
+
+def get_next_step(status: str) -> str:
+    """
+    Suggest next action.
+    """
+
+    if status == "Eligible":
+        return (
+            "Congratulations! Your certificate is ready to be issued."
+        )
+
+    if status == "Needs Improvement":
+        return (
+            "Complete pending tasks and improve attendance."
+        )
+
+    return (
+        "Improve overall internship performance before re-evaluation."
+    )

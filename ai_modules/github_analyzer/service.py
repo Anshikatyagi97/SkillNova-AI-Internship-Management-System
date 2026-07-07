@@ -11,7 +11,7 @@ TODO (Interns):
 """
 
 from typing import Dict, List
-
+from backend.ai.llm_service import llm
 
 def analyze_repository(repo_url: str) -> Dict:
     """
@@ -64,3 +64,96 @@ def generate_git_suggestions(repo_analysis: Dict) -> List[str]:
           score), then optionally polish the phrasing with an LLM.
     """
     return ["TODO: AI-generated Git/GitHub suggestion goes here."]
+
+def generate_ai_repository_summary(
+    repo_url: str,
+    commits: int,
+    branches: int,
+    readme_score: float,
+    code_quality_score: float,
+) -> str:
+    """
+    Generate AI-powered GitHub repository review.
+    """
+
+    prompt = f"""
+You are an expert Software Engineering Mentor.
+
+Repository:
+{repo_url}
+
+Statistics:
+
+Commits: {commits}
+
+Branches: {branches}
+
+README Score: {readme_score}/10
+
+Code Quality Score: {code_quality_score}/10
+
+Write a professional repository review.
+
+Include:
+- Repository health
+- Documentation quality
+- Code quality
+- Suggestions for improvement
+
+Keep the response within 4-5 sentences.
+"""
+
+    return llm.generate_response(prompt)
+
+
+def calculate_repository_health(
+    readme_score: float,
+    code_quality_score: float,
+) -> str:
+    """
+    Calculate repository health.
+    """
+
+    average = (
+        readme_score +
+        code_quality_score
+    ) / 2
+
+    if average >= 8:
+        return "Excellent"
+
+    elif average >= 6:
+        return "Good"
+
+    elif average >= 4:
+        return "Average"
+
+    return "Needs Improvement"
+
+
+def generate_repository_recommendations(
+    readme_score: float,
+    code_quality_score: float,
+) -> List[str]:
+    """
+    Generate repository improvement suggestions.
+    """
+
+    recommendations = []
+
+    if readme_score < 7:
+        recommendations.append(
+            "Improve README with installation and usage instructions."
+        )
+
+    if code_quality_score < 7:
+        recommendations.append(
+            "Improve code structure and follow coding standards."
+        )
+
+    if not recommendations:
+        recommendations.append(
+            "Repository is well maintained. Keep following best practices."
+        )
+
+    return recommendations
