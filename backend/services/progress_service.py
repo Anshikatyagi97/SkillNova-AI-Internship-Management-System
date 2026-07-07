@@ -87,8 +87,11 @@ def get_intern_progress(intern_id: str) -> dict:
 "is_slow_progress": progress_ai.predict_slow_progress(intern_id),
 
 "ai_summary": progress_ai.generate_ai_progress_narrative(
-    intern_id
+    intern_id=intern_id,
+    completion_percentage=round(completion_percentage, 2),
+    late_submissions=late_submissions,
 ),
+
 
 "suggested_next_tasks": progress_ai.suggest_next_tasks(
     intern_id

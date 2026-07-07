@@ -17,6 +17,10 @@ TODO (Interns):
 """
 
 from typing import Dict, List
+from backend.ai.llm_service import llm
+
+
+
 
 
 def get_completion_percentage(intern_id: str) -> float:
@@ -70,16 +74,34 @@ def detect_inactive_interns() -> List[str]:
     """
     return []
 
-
-def generate_ai_progress_narrative(intern_id: str) -> str:
+def generate_ai_progress_narrative(
+    intern_id: str,
+    completion_percentage: float = 0,
+    late_submissions: int = 0,
+) -> str:
     """
-    Use an LLM to turn structured progress stats into a natural-language
-    summary, e.g. "Intern X has completed 8/10 tasks and is on track."
-
-    TODO: Wire this up to Gemini API / Groq via LangChain.
+    Generate an AI-powered internship progress summary.
     """
-    return "TODO: AI-generated progress narrative goes here."
 
+    prompt = f"""
+You are an AI Internship Mentor.
+
+Intern ID: {intern_id}
+
+Completion Percentage: {completion_percentage}%
+
+Late Submissions: {late_submissions}
+
+Write a professional progress summary in 3-4 sentences.
+
+Include:
+- Overall performance
+- Current progress
+- Areas of improvement
+- Motivation for the intern
+"""
+
+    return llm.generate_response(prompt)
 
 def suggest_next_tasks(intern_id: str) -> List[str]:
     """

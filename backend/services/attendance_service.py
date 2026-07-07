@@ -2,9 +2,9 @@
 Backend service layer for the Attendance & Performance Analyzer feature.
 """
 
-from ai_modules.attendance_analyzer import service as attendance_ai
 from sqlalchemy.orm import Session
 
+from ai_modules.attendance_analyzer import service as attendance_ai
 from backend.database.database import SessionLocal
 from backend.models.attendance import Attendance
 
@@ -17,7 +17,6 @@ def get_intern_attendance(intern_id: str) -> dict:
     db: Session = SessionLocal()
 
     try:
-
         records = (
             db.query(Attendance)
             .filter(Attendance.intern_id == intern_id)
@@ -86,52 +85,34 @@ def get_intern_attendance(intern_id: str) -> dict:
             2,
         )
 
-        # Rule-Based AI Recommendation
-        if attendance_percentage >= 90:
-            ai_recommendation = (
-                "Excellent attendance. Keep maintaining your consistency."
-            )
-
-        elif attendance_percentage >= 75:
-            ai_recommendation = (
-                "Good attendance. Try to reduce late entries and maintain your performance."
-            )
-
-        elif attendance_percentage >= 60:
-            ai_recommendation = (
-                "Attendance is declining. Improve regularity to avoid falling behind."
-            )
-
-        else:
-            ai_recommendation = (
-                "Critical attendance. Immediate mentor intervention is recommended."
-            )
+        # AI Summary
+        ai_summary = attendance_ai.generate_ai_attendance_summary(
+            intern_id=intern_id,
+            attendance_percentage=attendance_percentage,
+            late_days=late,
+            absent_days=absent,
+        )
 
         return {
-
             "intern_id": intern_id,
-
             "total_days": total_days,
-
             "present_days": present,
-
             "absent_days": absent,
-
             "late_days": late,
-
             "attendance_percentage": attendance_percentage,
-
             "attendance_status": attendance_status,
-
             "attendance_grade": attendance_grade,
-
             "risk_level": risk_level,
-
             "mentor_alert": mentor_alert,
-
             "consistency_score": consistency_score,
-
-            "ai_summary": ai_recommendation,
+            "attendance_risk": attendance_ai.predict_attendance_risk(
+                attendance_percentage
+            ),
+            "attendance_recommendation": attendance_ai.attendance_recommendation(
+                attendance_percentage,
+                late,
+            ),
+            "ai_summary": ai_summary,
         }
 
     finally:

@@ -12,7 +12,7 @@ TODO (Interns):
 """
 
 from typing import Dict, List
-
+from backend.ai.llm_service import llm
 
 def get_attendance_percentage(intern_id: str, period: str = "overall") -> float:
     """
@@ -64,3 +64,74 @@ def get_attendance_heatmap_data(intern_id: str) -> List[Dict]:
           [{"date": "2026-01-01", "status": "present"}, ...]
     """
     return []
+
+def generate_ai_attendance_summary(
+    intern_id: str,
+    attendance_percentage: float,
+    late_days: int,
+    absent_days: int,
+) -> str:
+    """
+    Generate an AI-powered attendance summary.
+    """
+
+    prompt = f"""
+You are an AI Internship Mentor.
+
+Intern ID: {intern_id}
+
+Attendance Percentage: {attendance_percentage}%
+
+Late Days: {late_days}
+
+Absent Days: {absent_days}
+
+Write a professional attendance summary in 3-4 sentences.
+
+Include:
+- Attendance performance
+- Consistency
+- Areas of improvement
+- Motivation
+"""
+
+    return llm.generate_response(prompt)
+
+
+def predict_attendance_risk(
+    attendance_percentage: float,
+) -> str:
+    """
+    Predict attendance risk level.
+    """
+
+    if attendance_percentage >= 90:
+        return "Low"
+
+    elif attendance_percentage >= 75:
+        return "Medium"
+
+    return "High"
+
+
+def attendance_recommendation(
+    attendance_percentage: float,
+    late_days: int,
+) -> str:
+    """
+    Generate attendance recommendation.
+    """
+
+    if attendance_percentage < 60:
+        return (
+            "Improve attendance immediately and meet your mentor weekly."
+        )
+
+    if late_days >= 3:
+        return (
+            "Focus on punctuality to improve overall consistency."
+        )
+
+    return (
+        "Maintain your current attendance performance."
+    )
